@@ -1,6 +1,10 @@
 package web.parcial.entity;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,9 +19,18 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Entidad {
+public class Celular {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
+    private String marca;
+    private int serial;
+    private Date fechaCompra;
+    private int anioLanzamiento;
+    private int precio;
+    @Enumerated(EnumType.STRING)
+    private SistemaOperativo sistemaOperativo;
+    @Enumerated(EnumType.STRING)
+    private Gama gama;
+
 }

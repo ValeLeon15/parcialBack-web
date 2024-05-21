@@ -14,49 +14,49 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import web.parcial.dto.EntidadDTO;
-import web.parcial.service.EntidadService;
+import web.parcial.dto.CelularDTO;
+import web.parcial.service.CelularService;
 
 @RestController
-@RequestMapping(value="/parcial/entidad")
+@RequestMapping(value="/parcial/celular")
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class CelularController {
-    EntidadService entidadService;
+    CelularService celularService;
 
     @Autowired
-    CelularController(EntidadService entidadService) {
-        this.entidadService = entidadService;
+    CelularController(CelularService celularService) {
+        this.celularService = celularService;
     }
     
     @CrossOrigin
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public EntidadDTO get(@PathVariable Long id) {
-        return entidadService.get(id);
+    public CelularDTO get(@PathVariable Long id) {
+        return celularService.get(id);
     }
     
     @CrossOrigin
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<EntidadDTO> getAll() {
-        return entidadService.getAll();
+    public List<CelularDTO> getAll() {
+        return celularService.getAll();
     }
     
     @CrossOrigin
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public EntidadDTO save(@RequestBody EntidadDTO entidadDTO) {
-        return entidadService.save(entidadDTO);
+    public CelularDTO save(@RequestBody CelularDTO entidadDTO) {
+        return celularService.save(entidadDTO);
     }
     
     @CrossOrigin
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public EntidadDTO update(@RequestBody EntidadDTO entidadDTO) {
-        return entidadService.update(entidadDTO);
+    public CelularDTO update(@RequestBody CelularDTO entidadDTO) {
+        return celularService.update(entidadDTO);
     }
     
     @CrossOrigin
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public void delete(@PathVariable Long id) {
-        entidadService.delete(id);
+        celularService.delete(id);
     }
     
 
