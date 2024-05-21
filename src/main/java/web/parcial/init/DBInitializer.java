@@ -17,6 +17,8 @@ public class DBInitializer implements CommandLineRunner{
     public void run(String... args) throws Exception {
         Entidad entidad = new Entidad();
         entidad.setNombre("Entidad 1");
+        entidad.setNombre("Valentina");
+        entidad.setNombre("Juan");
         entidadRepository.save(entidad);
         
     }
